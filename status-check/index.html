@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Status Checker | mctools.pro</title>
+    <meta name="author" content="Alan Escarcha, VexyHost">
+    <meta name="keywords"
+        content="mctools, minecraft, tools, mc, mctools.pro, minecraft server tools, tools for minecraft">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="description" content="Get status about Minecraft servers fast, easy and free! :)">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/server-status.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <img src="/assets/img/logo.png" alt="Minecraft Server Tools" width="64"
+                    class="d-inline-block align-middle me-3">
+                <a class="navbar-brand fs-2" href="/">mctools.pro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord Hosting</a>
+                        </li>
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-primary" href="https://vexyhost.com/mctools">Minecraft Hosting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="py-5 text-center container-xl">
+            <div class="row py-xl-5">
+                <div id="title" class="col-server-status mx-auto">
+                    <h1 class="typewriter-server-status">Server Status <span
+                            style="color: var(--primary);">Checker</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <div class="container search-box">
+            <div class="alert alert-danger d-flex align-items-center d-none" role="alert" id="noFound">
+                <i class="bi bi-exclamation-triangle fs-5"></i>Could not get the server status. Did you type the correct
+                address?
+            </div>
+            <div class="input-group mb-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Server IP or Server Domain"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <select id="select-input" class="form-select" aria-label="Default select example">
+                    <option selected value="java-server">Java server</option>
+                    <option value="bedrock-server">Bedrock server</option>
+                </select>
+                <button class="btn btn-primary" type="button" id="button-search"><i class="bi bi-search"></i>
+                    Search</button>
+            </div>
+        </div>
+        <div class="container mt-5 server-status-box">
+            <div class="row row-cols-1 gap-5 row-cols-sm-1 gap-sm-0">
+                <div id="motd-server" class="col">
+                    <div class="mb-3">
+                        <h5>ICON & MOTD</h5>
+                        <div class="d-flex flex-row motd-server gap-2">
+                            <img id="server-icon" src="../assets/img/default-icon.png" alt="Minecraft server icon">
+
+                            <div class="d-flex flex-column flex-fill" style="min-width: 24rem;">
+                                <div class="d-flex">
+                                    <div class="">
+                                        <p class="mb-0 server-name">Minecraft Server</p>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <p id="server-ping-players" class="mb-0 server-ping"><img class="ms-1"
+                                                src="../assets/img/ping-offline.png"></p>
+                                    </div>
+                                </div>
+                                <span id="server-motd" class="minecraft"><span style="color: #AA0000;">Can't connect to
+                                        server.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="row row-cols-1 gap-0 row-cols-sm-2 gap-sm-0">
+                <div class="col">
+                    <h5>INFORMATION</h5>
+                    <div class="d-flex text-muted">
+                        <div id="box-status" class="bd-placeholder-img flex-shrink-0 me-2 rounded bg-secondary"
+                            style="padding: 16px; width: 16px; height: 16px; border-radius: .25rem;">
+                        </div>
+                        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                            <div class="d-flex justify-content-between">
+                                <strong id="box-status-string" class="text-gray-dark">Unset</strong>
+                            </div>
+                            <span id="box-status-span" class="d-block">Search server first!</span>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="server-players" value="0 / 0" placeholder="Players"
+                            disabled>
+                        <label for="server-players">Players</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="server-version" value="None" placeholder="Version"
+                            disabled>
+                        <label for="server-version">Server Version</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="server-software" value="None" placeholder="Version"
+                            disabled>
+                        <label for="server-software">Server Software</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>OTHER INFORMATION</h5>
+                    <div class="row row-cols-1 gap-0 row-cols-sm-2 gap-sm-0">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-hostname" value="None"
+                                    placeholder="Hostname" disabled>
+                                <label for="server-hostname">Hostname</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-protocol" value="None"
+                                    placeholder="Protocol version" disabled>
+                                <label for="server-protocol">Protocol version</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-ip-address" value="None"
+                                    placeholder="IP address" disabled>
+                                <label for="server-ip-address">IP address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-cached" value="None"
+                                    placeholder="Cached result" disabled>
+                                <label for="server-cached">Cached result</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-port" value="None"
+                                    placeholder="Port server" disabled>
+                                <label for="server-port">Port server</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-srv" value="None"
+                                    placeholder="SRV Record" disabled>
+                                <label for="server-srv">SRV Record</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-query" value="None"
+                                    placeholder="Query" disabled>
+                                <label for="server-query">Query</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="server-ping" value="None" placeholder="Ping"
+                                    disabled>
+                                <label for="server-ping">Ping</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-5 py-3 bg-light">
+        <center><figure class="figure mb-3">
+            <a href="https://vexyhost.com/mctools"><img
+                    src="https://media.discordapp.net/attachments/865377256725545000/889647197598126121/banner.gif"
+                    class="figure-img img-fluid rounded" alt="..."></a>
+            <figcaption class="figure-caption text-end">Partner Ad</figcaption>
+        </figure></center>
+        <div class="container text-center">
+            <span>Copyright ©
+                <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;"
+                    href="">mctools.pro</a> - <a style="text-decoration: none;" href="/about/">About</a> - <a
+                    style="text-decoration: none;" href="https://paypal.me/escarchaalan">Donate</a>
+            </span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/assets/main.js"></script>
+    <script src="/assets/server-status.js"></script>
+</body>
+
+</html>
