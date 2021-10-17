@@ -6,7 +6,7 @@ $('#whitelist-create').click(function(e){
 
     var form = $('#whitelist').serialize();
 
-    $.post('https://mctools.org/whitelist-creator/json', form, function(whitelist){
+    $.post('https://api-corsbypass.herokuapp.com/https://mctools.org/whitelist-creator/json', form, function(whitelist){
         var whitelist_pretty = JSON.stringify(whitelist['users'], null, 1);
 
         document.getElementById('whitelist-string').classList.remove('d-none');
