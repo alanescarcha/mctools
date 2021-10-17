@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Player Information | mctools.pro</title>
+    <meta name="author" content="Alan Escarcha, VexyHost">
+    <meta name="keywords"
+        content="mctools, minecraft, tools, mc, mctools.pro, minecraft server tools, tools for minecraft">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="description" content="Get UUID, Head, Skin and more information about a minecraft player! :)">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/player.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <img src="/assets/img/logo.png" alt="Minecraft Server Tools" width="64"
+                    class="d-inline-block align-middle me-3">
+                <a class="navbar-brand fs-2" href="/">mctools.pro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord Hosting</a>
+                        </li>
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-primary" href="https://vexyhost.com/mctools">Minecraft Hosting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="py-5 text-center container-xl">
+            <div class="row py-xl-5">
+                <div id="title" class="col-player mx-auto">
+                    <h1 class="typewriter-player-info">Player <span style="color: var(--primary);">Information</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <div class="container search-box">
+            <div class="alert alert-danger d-flex align-items-center d-none" role="alert" id="noFound">
+                <i class="bi bi-exclamation-triangle fs-5"></i>User not found. Check the text and verify that it's's a
+                Username or UUID.
+            </div>
+            <div class="input-group mb-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Minecraft Username or UUID"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <select id="select-input" class="form-select" aria-label="Default select example">
+                    <option selected value="username">Username</option>
+                    <option value="uuid">UUID</option>
+                </select>
+                <button class="btn btn-primary" type="button" id="button-search"><i class="bi bi-search"></i>
+                    Search</button>
+            </div>
+        </div>
+        <div class="container mt-5 player-box">
+            <div class="row row-cols-1 gap-5 row-cols-sm-2 gap-sm-0">
+                <div class="col">
+                    <div class="skin">
+                        <img id="skin-body"
+                            src="https://crafatar.com/renders/body/c06f8906-4c8a-4911-9c29-ea1dbd1aab82?overlay=true">
+                    </div>
+                    <a id="skin-link" class="btn btn-primary rounded-0 skin-btn"
+                        href="https://www.minecraft.net/profile/skin/remote?url=https://crafatar.com/skins/c06f8906-4c8a-4911-9c29-ea1dbd1aab82.png&model=classic">Get
+                        this skin!</a>
+                </div>
+                <div class="col">
+                    <div class="info-header">
+                        <img id="skin-avatar"
+                            src="https://crafatar.com/avatars/c06f8906-4c8a-4911-9c29-ea1dbd1aab82?overlay=true">
+                        <div class="info-header-text">
+                            <h5>PLAYER</h5>
+                            <h2 id="username">MHF_Steve</h2>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="player-uuid"
+                            value="c06f8906-4c8a-4911-9c29-ea1dbd1aab82" placeholder="Player UUID" disabled>
+                        <label for="player-uuid">Player UUID</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="player-uuid-trimmed"
+                            value="c06f89064c8a49119c29ea1dbd1aab82" placeholder="Trimmed UUID" disabled>
+                        <label for="player-uuid-trimmed">Trimmed UUID</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="player-previous-nick" value="Not available"
+                            placeholder="Previous Nick" disabled>
+                        <label for="player-previous-nick">Previous Nick</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-5 py-3 bg-light">
+        <center><figure class="figure mb-3">
+            <a href="https://vexyhost.com/mctools"><img
+                    src="https://media.discordapp.net/attachments/865377256725545000/889647197598126121/banner.gif"
+                    class="figure-img img-fluid rounded" alt="..."></a>
+            <figcaption class="figure-caption text-end">Partner Ad</figcaption>
+        </figure></center>
+        <div class="container text-center">
+            <span>Copyright ©
+                <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;"
+                    href="">mctools.pro</a> - <a style="text-decoration: none;" href="/about/">About</a> - <a
+                    style="text-decoration: none;" href="https://paypal.me/escarchaalan">Donate</a>
+            </span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/assets/main.js"></script>
+    <script src="/assets/player.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Whitelist Creator | mctools.pro</title>
+    <meta name="author" content="Alan Escarcha, VexyHost">
+    <meta name="keywords"
+        content="mctools, minecraft, tools, mc, mctools.pro, minecraft server tools, tools for minecraft">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="description" content="Create and Download your whitelist.json file easy, fast and free!:)">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/whitelist.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <img src="/assets/img/logo.png" alt="Minecraft Server Tools" width="64"
+                    class="d-inline-block align-middle me-3">
+                <a class="navbar-brand fs-2" href="/">mctools.pro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord Hosting</a>
+                        </li>
+                        <li class="nav-item d-grid">
+                            <a class="btn btn-primary" href="https://vexyhost.com/mctools">Minecraft Hosting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="py-5 text-center container-xl">
+            <div class="row py-xl-5">
+                <div id="title" class="col-whitelist mx-auto">
+                    <h1 class="typewriter-whitelist-info">Whitelist <span style="color: var(--primary);">Creator</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <div class="container mt-5 whitelist-box">
+            <div class="alert alert-danger d-flex align-items-center d-none" role="alert" id="whitelist-errors">
+                <i class="bi bi-exclamation-triangle fs-5"></i>Error creating the whitelist.json file, check
+                that the names are spelled correctly.
+            </div>
+            <div class="alert alert-info d-flex align-items-center" role="alert" id="whitelist-errors">
+                <i class="bi bi-info-circle fs-5"></i>Type a list of usernames, one per line, or separated by commas.
+            </div>
+            <form method="post" accept-charset="utf-8" action="#whitelist" id="whitelist">
+                <div class="row row-cols-1 gap-5 row-cols-sm-2 gap-sm-0">
+                    <div class="col">
+                        <div class="mb-3">
+                            <h5>USERNAMES</h5>
+                            <textarea class="form-control mb-3" name="usernames" id="whitelist-usernames" rows="10"
+                                placeholder="Notch,YourNick,md_5,..." required autofocus></textarea>
+                            <button type="button" class="btn btn-primary" id="whitelist-create">Create</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <div id="whitelist-display">
+                                <h5>WHITELIST FILE</h5>
+                                <textarea class="form-control mb-2" id="whitelist-output" rows="10"
+                                    readonly=""></textarea>
+                                <label id="whitelist-string" class="d-none"
+                                    for="whitelist-output"><code>Spigot/Paper > whitelist.json </code><a
+                                        id="whitelist-link" href="" download="whitelist.json">Download here!</a></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer mt-5 py-3 bg-light">
+        <center><figure class="figure mb-3">
+            <a href="https://vexyhost.com/mctools"><img
+                    src="https://media.discordapp.net/attachments/865377256725545000/889647197598126121/banner.gif"
+                    class="figure-img img-fluid rounded" alt="..."></a>
+            <figcaption class="figure-caption text-end">Partner Ad</figcaption>
+        </figure></center>
+        <div class="container text-center">
+            <span>Copyright ©
+                <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;"
+                    href="">mctools.pro</a> - <a style="text-decoration: none;" href="/about/">About</a> - <a
+                    style="text-decoration: none;" href="https://paypal.me/escarchaalan">Donate</a>
+            </span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/main.js"></script>
+    <script src="/assets/whitelist.js"></script>
+</body>
+
+</html>

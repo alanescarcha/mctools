@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'minecraftiaregular';
+    src:  url('../assets/fonts/minecraftia-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.typewriter>.typewriter-server-status{
+    animation: typing 2s steps(23), blink .5s step-end infinite alternate;
+}
+.col-server-status{
+    width: calc(var(--bs-gutter-x) * 32);
+}
+.server-status-box{
+    max-width: 70rem;
+}
+.motd-server{
+    background: url(./img/mc-bg.png);
+    padding: 4px;
+    width: max-content;
+}
+.motd-server>img{
+    width: 64px;
+    height: 64px;
+}
+.server-name{
+    font-family: 'minecraftiaregular';
+    color: white;
+}
+.server-ping{
+    font-family: 'minecraftiaregular';
+    color: #aaa;
+}
+.server-ping>span{
+    font-family: 'minecraftiaregular';
+    color: #555;
+}
+.server-motd{
+    font-family: 'minecraftiaregular';
+    color: grey;
+}
+.search-box{
+    max-width: 50rem;
+}
+.form-select{
+    max-width: 25%;
+}
+.minecraft {
+    color: #AAAAAA;
+    display: inline;
+    white-space: pre;
+    width: 100%;
+}
+
+.minecraft,
+.minecraft > *,
+.minecraft > * > *,
+.minecraft > * > * > *,
+.minecraft > * > * > * > *{
+    font-family: 'minecraftiaregular';
+}
+.minecraft-formatted--obfuscated{
+    font-family: monospace;
+}
+
+h5{
+    color: var(--bs-primary);
+}
+
+
+@media (max-width: 576px) {
+    .form-select{
+        max-width: 100%;
+    }
+    .input-group{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .input-group>.form-control,
+    .input-group>.form-select{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn1 {
+        margin: var(--bs-gutter-x, 2rem) 0px 0px 0px;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}

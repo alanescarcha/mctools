@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'minecraftiaregular';
+    src:  url('../assets/fonts/minecraftia-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.typewriter>.typewriter-motd{
+    animation: typing 1s steps(12), blink .5s step-end infinite alternate;
+}
+.motd-box{
+    max-width: 70rem;
+}
+.col-motd{
+    width: calc(var(--bs-gutter-x) * 21);
+}
+.motd-box{
+    max-width: 50rem;
+}
+
+textarea {
+	resize: vertical;
+}
+
+#content {
+	border: 1px solid #DDDDDD;
+	border-top: none;
+}
+
+.minecraft {
+	background-color: black;
+	color: #AAAAAA;
+	display: inline-block;
+	font-family: 'minecraftiaregular';
+	letter-spacing: 0.1em;
+	padding: 0.5em;
+	white-space: pre;
+	width: 100%;
+}
+.minecraft,
+.minecraft > *,
+.minecraft > * > *,
+.minecraft > * > * > *,
+.minecraft > * > * > * > *{
+    font-family: 'minecraftiaregular';
+}
+
+h5{
+    color: var(--bs-primary);
+}
+.form-switch{
+    display: flex;
+    align-items: center;
+}
+
+.btn-colors .btn span {
+	display: inline-block;
+	outline: 1px solid rgb(204,204,204);
+	width: 1.4em;
+}
+
+#motd-toolbar.toggled .btn::after {
+	content: " (&" attr(data-color) ")";
+}
+
+#whitelist-errors, #whitelist-display {
+	display: none;
+}
+
+.minecraft-formatted--obfuscated{
+    font-family: monospace;
+}
