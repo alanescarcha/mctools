@@ -10,9 +10,9 @@ function showErrorAlert() {
 // detectar si existe el usuario
 function MsgAlertNoFound(data) {
     var element = document.getElementById('noFound');
-    if(data == 204){
+    if (data == 204) {
         element.classList.remove('d-none');
-    } else if(data == 200){
+    } else if (data == 200) {
         element.classList.add('d-none');
     }
 }
@@ -27,26 +27,24 @@ async function ShowData(data) {
         document.getElementById('username').textContent = response.data.mojang.username;
         document.getElementById('player-uuid').value = response.data.mojang.uuid;
         document.getElementById('player-uuid-trimmed').value = data;
-        if(lastSkinNum == 0){
+        if (lastSkinNum == 0) {
             document.getElementById('player-previous-nick').value = 'Not available';
-        }else{
+        } else {
             document.getElementById('player-previous-nick').value = response.data.mojang.username_history[lastSkinNum].name;
         }
     } catch (error) {
         console.error(error);
     }
-
-
 }
 
 async function getSearch(textInput) {
     const selectInput = document.getElementById('select-input').value;
     if (selectInput == 'username') {
-        await axios.get(`https://api.mojang.com/users/profiles/minecraft/${textInput}`)
+        await axios.get(`https://api.mctools.pro/mojang/v1/${textInput}`)
             .then(function (response) {
                 if (response.status == 200) {
                     MsgAlertNoFound(response.status);
-                    ShowData(response.data.id);
+                    ShowData(response.data.mojang.raw_uuid);
                 } else if (response.status == 204) {
                     MsgAlertNoFound(response.status);
                 } else {
@@ -60,12 +58,12 @@ async function getSearch(textInput) {
                 showErrorAlert();
                 console.error(error);
             });
-    } else if(selectInput == 'uuid'){
-        await axios.get(`https://api.mojang.com/user/profile/${textInput}`)
+    } else if (selectInput == 'uuid') {
+        await axios.get(`https://api.mctools.pro/mojang/v1/${textInput}`)
             .then(function (response) {
                 if (response.status == 200) {
                     MsgAlertNoFound(response.status);
-                    ShowData(response.data.id);
+                    ShowData(response.data.mojang.raw_uuid);
                 } else if (response.status == 204) {
                     MsgAlertNoFound(response.status);
                 } else {
@@ -84,9 +82,9 @@ async function getSearch(textInput) {
 
 document.getElementById('button-search').addEventListener("click", () => {
     const textInput = document.getElementById('search-input').value;
-    if(textInput == ''){
+    if (textInput == '') {
         return;
-    } else{
+    } else {
         getSearch(textInput);
     }
 });
