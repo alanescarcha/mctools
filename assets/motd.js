@@ -57,7 +57,7 @@ $(function(){
 function update_motd() {
 	var form = $('#motd').serialize();
 
-	$.post('https://mctools.org/motd-creator/json', form, function(motd){
+	$.post('https://api-corsbypass.herokuapp.com/https://mctools.org/motd-creator/json', form, function(motd){
 		$('#motd-preview').html(motd['html']);
 		$('#motd-config').val(motd['config']);
 		$('#motd-bungeecord').val(motd['bungeecord']);
