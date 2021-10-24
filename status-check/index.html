@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
-<body>
+<body data-theme="dark">
     <header>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
@@ -34,12 +34,17 @@
                 <div class="navbar-collapse collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto gap-2">
                         <li class="nav-item d-grid">
-                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord Hosting</a>
+                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord
+                                Hosting</a>
                         </li>
                         <li class="nav-item d-grid">
                             <a class="btn btn-primary" href="https://vexyhost.com/mctools">Minecraft Hosting</a>
                         </li>
                     </ul>
+                    <div class="form-check form-switch mx-2 btn2">
+                        <input type="checkbox" class="form-check-input" id="darkSwitch"/>
+                        <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -88,8 +93,7 @@
                                                 src="../assets/img/ping-offline.png"></p>
                                     </div>
                                 </div>
-                                <span id="server-motd" class="minecraft"><span style="color: #AA0000;">Can't connect to
-                                        server.</span></span>
+                                <span id="server-motd" class="minecraft"><span style="color: #AA0000;">Can't connect to server.</span></span>
                             </div>
                         </div>
                     </div>
@@ -103,7 +107,7 @@
                         <div id="box-status" class="bd-placeholder-img flex-shrink-0 me-2 rounded bg-secondary"
                             style="padding: 16px; width: 16px; height: 16px; border-radius: .25rem;">
                         </div>
-                        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                        <div class="pb-3 mb-0 small lh-sm w-100">
                             <div class="d-flex justify-content-between">
                                 <strong id="box-status-string" class="text-gray-dark">Unset</strong>
                             </div>
@@ -183,12 +187,14 @@
         </div>
     </main>
     <footer class="footer mt-5 py-3 bg-light">
-        <center><figure class="figure mb-3">
-            <a href="https://vexyhost.com/mctools"><img
-                    src="https://media.discordapp.net/attachments/865377256725545000/889647197598126121/banner.gif"
-                    class="figure-img img-fluid rounded" alt="..."></a>
-            <figcaption class="figure-caption text-end">Partner Ad</figcaption>
-        </figure></center>
+        <center>
+            <figure class="figure mb-3">
+                <a href="https://vexyhost.com/mctools"><img
+                        src="https://media.discordapp.net/attachments/865377256725545000/889647197598126121/banner.gif"
+                        class="figure-img img-fluid rounded" alt="..."></a>
+                <figcaption class="figure-caption text-end">Partner Ad</figcaption>
+            </figure>
+        </center>
         <div class="container text-center">
             <span>Copyright ©
                 <script>document.write(new Date().getFullYear())</script> <a style="text-decoration: none;"
@@ -207,6 +213,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/assets/main.js"></script>
     <script src="/assets/server-status.js"></script>
+    <script src="/assets/theme-toggle.js"></script>
 </body>
 
 </html>

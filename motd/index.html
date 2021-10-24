@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
-<body>
+<body data-theme="dark">
     <header>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
@@ -35,12 +35,17 @@
                 <div class="navbar-collapse collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto gap-2">
                         <li class="nav-item d-grid">
-                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord Hosting</a>
+                            <a class="btn btn-outline-primary btn1" href="https://discord.vexyhost.com">Discord
+                                Hosting</a>
                         </li>
                         <li class="nav-item d-grid">
                             <a class="btn btn-primary" href="https://vexyhost.com/mctools">Minecraft Hosting</a>
                         </li>
                     </ul>
+                    <div class="form-check form-switch mx-2 btn2">
+                        <input type="checkbox" class="form-check-input" id="darkSwitch"/>
+                        <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -193,6 +198,7 @@ Welcome to mctools.pro</textarea>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/assets/main.js"></script>
     <script src="/assets/motd.js"></script>
+    <script src="/assets/theme-toggle.js"></script>
 </body>
 
 </html>

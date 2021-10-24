@@ -7,6 +7,9 @@
 .typewriter>.typewriter-motd{
     animation: typing 1s steps(12), blink .5s step-end infinite alternate;
 }
+.typewriterDark>.typewriter-motd{
+    animation: typing 1s steps(12), blinkdark .5s step-end infinite alternate;
+}
 .motd-box{
     max-width: 70rem;
 }
@@ -27,7 +30,7 @@ textarea {
 }
 
 .minecraft {
-	background-color: black;
+	background-image: url('./img/mc-bg.png');
 	color: #AAAAAA;
 	display: inline-block;
 	font-family: 'minecraftiaregular';
@@ -47,7 +50,7 @@ textarea {
 h5{
     color: var(--bs-primary);
 }
-.form-switch{
+.btn-group>.form-switch{
     display: flex;
     align-items: center;
 }

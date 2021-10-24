@@ -7,6 +7,9 @@
 .typewriter>.typewriter-server-status{
     animation: typing 2s steps(23), blink .5s step-end infinite alternate;
 }
+.typewriterDark>.typewriter-server-status{
+    animation: typing 2s steps(23), blinkdark .5s step-end infinite alternate;
+}
 .col-server-status{
     width: calc(var(--bs-gutter-x) * 32);
 }

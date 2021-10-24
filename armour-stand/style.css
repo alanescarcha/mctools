@@ -5,6 +5,7 @@ html, body{
 	padding: 0;
 }
 
+
 canvas{
 	position: relative;
 	top: 0;
@@ -12,8 +13,10 @@ canvas{
 }
 
 body{
-	background-color: #dddddd;
+	background-color: #141414;
+	color: #f8f9fa;
 }
+
 
 div{
 	padding: 0;
@@ -72,12 +75,12 @@ input[type="text"]:not(:last-child){
 }
 
 .card{
-	background-color: #ffffff;
+	background-color: #202020;
 	box-shadow: 0 2px 4px #555555;
-	margin: 0.5em;
 	border-radius: 3px;
 	padding: 1em;
 }
+
 
 .right{
 	margin-left: 60%;

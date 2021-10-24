@@ -10,4 +10,5 @@ const deviceType = () => {
 };
 if(deviceType() == "desktop"){
     document.getElementById('title').classList.add('typewriter');
+    document.getElementById('title').classList.add('typewriterDark');
 }

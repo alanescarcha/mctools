@@ -1,6 +1,9 @@
 .typewriter>.typewriter-player-info{
     animation: typing 2s steps(23), blink .5s step-end infinite alternate;
 }
+.typewriterDark>.typewriter-player-info{
+    animation: typing 2s steps(23), blinkdark .5s step-end infinite alternate;
+}
 .player-box{
     max-width: 50rem;
 }
