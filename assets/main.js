@@ -9,6 +9,11 @@ const deviceType = () => {
     return "desktop";
 };
 if(deviceType() == "desktop"){
-    document.getElementById('title').classList.add('typewriter');
-    document.getElementById('title').classList.add('typewriterDark');
+    if (localStorage.getItem("darkSwitch") == "dark") {
+        document.getElementById('title').classList.add('typewriterDark');
+    } else if (localStorage.getItem("darkSwitch") == "light") {
+        document.getElementById('title').classList.add('typewriter');
+    }else{
+        document.getElementById('title').classList.add('typewriterDark');
+    }
 }
